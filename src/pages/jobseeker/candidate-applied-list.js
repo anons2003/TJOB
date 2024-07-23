@@ -205,7 +205,12 @@ function JobSeekersTable() {
     const doNotShow = sessionStorage.getItem("doNotShowAcceptConfirm");
     setDoNotShowAgain(doNotShow === "true");
   }, []);
-
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = resumeContent;
+    link.download = "resume";
+    link.click();
+  };
   return (
     <>
       <NavbarDark />
@@ -380,6 +385,9 @@ function JobSeekersTable() {
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseModal}>
               Close
+            </Button>
+            <Button variant="primary" onClick={handleDownload}>
+              Download
             </Button>
           </Modal.Footer>
         </Modal>

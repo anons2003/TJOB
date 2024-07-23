@@ -32,7 +32,7 @@ const DatatableJobSeeker = () => {
   const transformData = (data) => {
     return data.map(item => ({
       id: item.jid,  // Assuming 'jid' is the job seeker ID
-      user_name: item.user?.user_name,
+      user_name: item.user.user_name,
       email: item.user.email,
       created_at: new Date(item.user.created_at).toLocaleDateString(),  // Format date
       role: item.user.roleType ? item.user.roleType.roleTypeName : 'Unknown Role',
