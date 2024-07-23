@@ -28,18 +28,19 @@ const DatatableJobSeeker = () => {
 
     fetchUsers();
   }, []);
-  console.log(users);
+
   const transformData = (data) => {
-    return data.map(item => ({
-      id: item.jid,  // Assuming 'jid' is the job seeker ID
-      user_name: item.user.user_name,
-      email: item.user.email,
-      created_at: new Date(item.user.created_at).toLocaleDateString(),  // Format date
-      role: item.user.roleType ? item.user.roleType.roleTypeName : 'Unknown Role',
-      is_active: item.user.isActive === 1 ? "Active" : "Inactive", // Check if isActive is 1 or 0
-      // avatarUrl: `https://avatars.dicebear.com/api/initials/${item.user.user_name}.svg`
-      // avatar_url: item.avatar_url
-    }));
+    return data.map(item => {
+      const user = item.user || {}; 
+      return {
+        id: item.jid,  
+        user_name: user.user_name || 'Unknown', 
+        email: user.email || 'No Email',
+        created_at: user.created_at ? new Date(user.created_at).toLocaleDateString() : 'Unknown Date',  // Format date
+        role: user.roleType ? user.roleType.roleTypeName : 'Unknown Role',
+        is_active: user.isActive === 1 ? "Active" : "Inactive", // Check if isActive is 1 or 0
+      };
+    });
   };
 
   const handleToggleActive = async (id, currentIsActive) => {
