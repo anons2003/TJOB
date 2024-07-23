@@ -60,7 +60,7 @@ const DatatablePackageService = () => {
         <div className="datatable">
             <div className="datatableTitle">
                 Add New Package
-                <Link to="/packages/add" className="link">
+                <Link to="/packageServices/add" className="link">
                     Add New
                 </Link>
             </div>

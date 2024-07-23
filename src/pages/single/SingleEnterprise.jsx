@@ -42,11 +42,7 @@ const SingleEnterprise = () => {
                     <div className="left">
                         <h1 className="title">Enterprise Information</h1>
                         <div className="item">
-                            <img
-                                src={enterprise.avatar_url}
-                                alt=""
-                                className="itemImg"
-                            />
+
                             <div className="details">
                                 <h1 className="itemTitle">{enterprise.enterprise_name}</h1>
                                 <div className="detailItem">
@@ -104,9 +100,7 @@ const SingleEnterprise = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="right">
-                        <Chart aspect={2 / 1} title="Enterprise Performance (Last 6 Months)" />
-                    </div>
+
                 </div>
             </div>
         </div>

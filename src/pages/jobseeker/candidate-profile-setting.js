@@ -599,7 +599,7 @@ export default function CandidateProfileSetting() {
                             {jobCategories.map((category) => (
                               <option
                                 key={category.jobCategoryId}
-                                value={category.jobCategoryId}
+                                value={category.jobCategoryName}
                               >
                                 {category.jobCategoryName}
                               </option>

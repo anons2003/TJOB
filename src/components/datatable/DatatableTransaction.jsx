@@ -39,12 +39,6 @@ const DatatableTransaction = () => {
 
     return (
         <div className="datatable">
-            <div className="datatableTitle">
-                Add New Transaction
-                <Link to="/transactions/add" className="link">
-                    Add New
-                </Link>
-            </div>
             {loading ? (
                 <p>Loading...</p>
             ) : error ? (

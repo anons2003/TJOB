@@ -129,12 +129,12 @@ const Sidebar = () => {
               <span>   Blog</span>
             </ul>
           </Link>
-          <Link to="/statistic" style={{ textDecoration: "none" }}>
+          {/* <Link to="/statistic" style={{ textDecoration: "none" }}>
             <ul>
               <ExtensionIcon className="icon" />
               <span>  Statistic</span>
             </ul>
-          </Link>
+          </Link> */}
           <Link to="/create-template" style={{ textDecoration: "none" }}>
             <ul>
               <ExtensionIcon className="icon" />
